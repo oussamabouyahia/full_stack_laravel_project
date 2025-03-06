@@ -8,6 +8,6 @@ Route::get('/', function () {
 });
 Route::get('/ninjas', [ninjaController::class,"index"])->name('ninjas.index');
 Route::get('/ninjas/create', [ninjaController::class,"create"])->name('ninjas.create');
-Route::get('/ninjas/{id}', [ninjaController::class,"show"])->name('ninjas.show');
+Route::get('/ninjas/{ninja}', [ninjaController::class,"show"])->name('ninjas.show');
 Route::post('/ninjas', [ninjaController::class,"store"])->name('ninjas.store');
-Route::delete('/ninjas/{id}', [ninjaController::class,"destroy"])->name('ninjas.destroy');
+Route::delete('/ninjas/{ninja}', [ninjaController::class,"destroy"])->name('ninjas.destroy');

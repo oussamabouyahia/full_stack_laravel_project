@@ -15,8 +15,8 @@ class ninjaController extends Controller
         return view('ninjas.index',["ninjas"=>$ninjas
     ]);
     }
-    function show($id){
-        $ninja=Ninja::with('dojo')->findOrFail($id);
+    function show(Ninja $ninja){
+        $ninja->load('dojo');
         return view('ninjas.show',["ninja"=>$ninja]);
     }
     function create(){
@@ -32,10 +32,10 @@ class ninjaController extends Controller
         ]);
         if(!$validated) {return response()->json(["message"=>"no valid inputs"]);}
        $ninja=Ninja::create($validated);
-    return redirect()->route('ninjas.index')->with('success','new ninja created successfully!');
+        return redirect()->route('ninjas.index')->with('success','new ninja created successfully!');
     }
-    function destroy($id){
-        $ninja=Ninja::findOrFail($id);
+    function destroy(Ninja $ninja){
+
         $ninja->delete();
         return redirect()->route('ninjas.index')->with('success',' ninja was deleted successfully!');
     }
