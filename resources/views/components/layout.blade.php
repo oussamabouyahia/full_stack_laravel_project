@@ -9,8 +9,11 @@
 </head>
 <body>
     @if (session('success'))
-<div id="flash" class="bg-green-100 text-center text-green-500 p-4 font-bold">
-    {{ session('success') }}
+<div >
+ <p id="flash" class="bg-green-100 text-center text-green-500 p-4 font-bold">
+
+     {{ session('success') }}
+</p>
 </div>
     @endif
     <header>
