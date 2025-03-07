@@ -40,6 +40,9 @@
                 <a href="{{ route('ninjas.create') }}" class="hover:underline">Create New Ninja</a>
                 <a href="{{ route('show.register') }}" class="hover:underline">Register</a>
                 <a href="{{ route('show.login') }}" class="hover:underline">Login</a>
+                <form action="" method="POST">
+                    <button class="btn hover:underline">Logout</button>
+                </form>
             </nav>
         </div>
     </header>
