@@ -16,9 +16,7 @@
                     type="email" id="email" name="email" value="{{ old('email') }}" required
                     class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                @error('email')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+
             </div>
 
             {{-- Password --}}
@@ -28,16 +26,10 @@
                     type="password" id="password" name="password" required
                     class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                @error('password')
-                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+
             </div>
 
-            {{-- Remember Me --}}
-            <div class="flex items-center">
-                <input type="checkbox" id="remember" name="remember" class="mr-2">
-                <label for="remember" class="text-gray-700">Remember Me</label>
-            </div>
+
 
             {{-- Submit Button --}}
             <div class="text-center">
@@ -49,12 +41,6 @@
                 </button>
             </div>
 
-            {{-- Forgot Password --}}
-            <div class="text-center mt-2">
-                <a href="{{ route('password.request') }}" class="text-blue-500 hover:underline text-sm">
-                    Forgot your password?
-                </a>
-            </div>
         </form>
         @if ($errors->any())
         <ul class="bg-red-100 p-2 m-1">
